@@ -23,6 +23,10 @@ jobs:
       run: npm start &
     - name: Run Integration Tests
       run: npm test
-    - name: Deploy to Render
-      run: johnbeynon/render-deploy-action@v0.0.8
+    - name: Deploy to production
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+          service-id: student-registry-yrwa
+          api-key: ${{ secrets.RENDER_TOKEN }}
+          wait-for-success: true
       

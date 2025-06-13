@@ -26,7 +26,7 @@ jobs:
     - name: Deploy to production
       uses: johnbeynon/render-deploy-action@v0.0.8
       with:
-          service-id: student-registry-yrwa
+          service-id: ${{ secrets.RENDER_SRV_TOKEN }}
           api-key: ${{ secrets.RENDER_TOKEN }}
           wait-for-success: true
       
